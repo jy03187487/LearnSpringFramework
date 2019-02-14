@@ -8,6 +8,7 @@
     <modules>
         <module>chapter_1.1-1.2</module>
         <module>chapter_1.3</module>
+        <module>chapter_1.4</module>
     </modules>
     <name>maven-springmvc Maven Webapp</name>
     <url>http://maven.apache.org</url>
