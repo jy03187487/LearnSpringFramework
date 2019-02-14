@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="exampleBean" class="examples.ExampleBean"/>
+
+    <bean name="anotherExample;anotherExampleAlias2" class="examples.ExampleBeanTwo"/>
+    <alias name="anotherExample" alias="anotherExampleAlias"/>
+
+    <bean id="clientService"
+          class="examples.ClientService"
+          factory-method="createInstance"/>
+
+    <!-- the factory bean, which contains a method called createInstance() -->
+    <bean id="serviceLocator" class="examples.DefaultServiceLocator">
+        <!-- inject any dependencies required by this locator bean -->
+    </bean>
+
+    <!-- the bean to be created via the factory bean -->
+    <bean id="clientServiceFromServiceLocator"
+          factory-bean="serviceLocator"
+          factory-method="createClientServiceInstance"/>
+</beans>
