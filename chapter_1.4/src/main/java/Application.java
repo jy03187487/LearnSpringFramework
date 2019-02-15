@@ -3,8 +3,10 @@ import examples.ComplexObject;
 import examples.DependBean;
 import examples.ExampleBean;
 import examples.ExampleBeanSetter;
+import fiona.apple.CommandManager;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import replace.MyValueCalculator;
 import x.y.ThingOne;
 
 public class Application {
@@ -40,5 +42,12 @@ public class Application {
 
         AutowireBeanOne autowireBeanOne = context.getBean("autowireBeanOne", AutowireBeanOne.class);
         System.out.println(autowireBeanOne);
+
+        CommandManager commandManager = context.getBean("commandManager", CommandManager.class);
+        System.out.println(commandManager.process(null));
+        System.out.println(commandManager.process(null));
+
+        MyValueCalculator myValueCalculator = context.getBean("myValueCalculator", MyValueCalculator.class);
+        System.out.println(myValueCalculator.computeValue("111"));
     }
 }

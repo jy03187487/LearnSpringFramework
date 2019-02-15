@@ -43,4 +43,6 @@
     <import resource="collections_merge.xml"/>
     <import resource="depend_on.xml"/>
     <import resource="autowire.xml"/>
+    <import resource="lookup_method.xml"/>
+    <import resource="replace_method.xml"/>
 </beans>
