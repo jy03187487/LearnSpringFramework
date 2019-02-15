@@ -1,3 +1,6 @@
+import autowire.AutowireBeanOne;
+import examples.ComplexObject;
+import examples.DependBean;
 import examples.ExampleBean;
 import examples.ExampleBeanSetter;
 import org.springframework.context.ApplicationContext;
@@ -21,5 +24,21 @@ public class Application {
         System.out.println(exampleBeanSetter.getBeanOne());
         System.out.println(exampleBeanSetter.getBeanTwo());
         System.out.println(exampleBeanSetter.getI());
+
+        ComplexObject moreComplexObject = context.getBean("moreComplexObject", ComplexObject.class);
+        System.out.println(moreComplexObject);
+        System.out.println(moreComplexObject.getAdminEmails());
+        System.out.println(moreComplexObject.getSomeList());
+        System.out.println(moreComplexObject.getSomeMap());
+        System.out.println(moreComplexObject.getSomeSet());
+
+        ComplexObject moreComplexObjectMerge = context.getBean("child", ComplexObject.class);
+        System.out.println(moreComplexObjectMerge.getAdminEmails());
+
+        DependBean dependBean = context.getBean("dependBean", DependBean.class);
+        System.out.println(dependBean);
+
+        AutowireBeanOne autowireBeanOne = context.getBean("autowireBeanOne", AutowireBeanOne.class);
+        System.out.println(autowireBeanOne);
     }
 }

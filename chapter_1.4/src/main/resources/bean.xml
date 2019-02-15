@@ -39,4 +39,8 @@
     <bean id="anotherExampleBean" class="examples.AnotherBean"/>
     <bean id="yetAnotherBean" class="examples.YetAnotherBean"/>
 
+    <import resource="collections.xml"/>
+    <import resource="collections_merge.xml"/>
+    <import resource="depend_on.xml"/>
+    <import resource="autowire.xml"/>
 </beans>

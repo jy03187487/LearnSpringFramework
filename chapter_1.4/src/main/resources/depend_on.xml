@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="dependBean" class="examples.DependBean" depends-on="manager,accountDao">
+        <property name="manager" ref="manager" />
+    </bean>
+
+    <bean id="manager" class="examples.ManagerBean" lazy-init="true"/>
+    <bean id="accountDao" class="examples.JdbcAccountDao" />
+
+</beans>
