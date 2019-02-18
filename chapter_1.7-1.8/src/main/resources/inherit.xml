@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="inheritedTestBean" abstract="true"
+          class="org.springframework.beans.TestBean">
+        <property name="name" value="parent"/>
+        <property name="age" value="1"/>
+    </bean>
+
+    <bean id="inheritsWithDifferentClass"
+          class="examples.DerivedTestBean"
+          parent="inheritedTestBean" init-method="initialize">
+        <property name="name" value="override"/>
+        <!-- the age property value of 1 will be inherited from parent -->
+    </bean>
+
+    <bean id="inheritedTestBeanWithoutClass" abstract="true">
+        <property name="name" value="parent"/>
+        <property name="age" value="1"/>
+    </bean>
+
+    <bean id="inheritsWithClass" class="examples.DerivedTestBean"
+          parent="inheritedTestBeanWithoutClass" init-method="initialize">
+        <property name="name" value="override"/>
+        <!-- age will inherit the value of 1 from the parent bean definition-->
+    </bean>
+
+</beans>
