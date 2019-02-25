@@ -13,6 +13,11 @@
         <module>chapter_1.6</module>
         <module>chapter_1.7-1.8</module>
         <module>chapter_1.9</module>
+        <module>chapter_1.10</module>
+        <module>chapter_1.11</module>
+        <module>chapter_1.12</module>
+        <module>chapter_1.13-1.14</module>
+        <module>chapter_1.15</module>
     </modules>
     <name>maven-springmvc Maven Webapp</name>
     <url>http://maven.apache.org</url>
@@ -38,6 +43,12 @@
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
             <version>1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-indexer</artifactId>
+            <version>5.1.5.RELEASE</version>
+            <optional>true</optional>
         </dependency>
 
     </dependencies>
